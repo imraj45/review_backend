@@ -19,11 +19,11 @@ export class Review {
   @Column()
   platformId: string;
 
-  @Column()
-  screenshotPath: string;
+  @Column({ type: 'text' })
+  screenshotData: string;
 
   @Column()
-  screenshotUrl: string;
+  screenshotMimeType: string;
 
   @Column({ default: 'pending' })
   status: ReviewStatus;

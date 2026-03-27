@@ -17,13 +17,14 @@ export class ReviewsService {
   async create(
     userId: string,
     platformId: string,
-    filename: string,
+    screenshotData: string,
+    screenshotMimeType: string,
   ): Promise<Review> {
     const review = this.reviewsRepo.create({
       userId,
       platformId,
-      screenshotPath: filename,
-      screenshotUrl: `/uploads/${filename}`,
+      screenshotData,
+      screenshotMimeType,
       status: 'pending',
     });
     return this.reviewsRepo.save(review);
