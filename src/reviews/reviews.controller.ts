@@ -50,11 +50,9 @@ export class ReviewsController {
     if (!file) {
       throw new BadRequestException('Screenshot file is required');
     }
-    const base64Data = file.buffer.toString('base64');
     const review = await this.reviewsService.create(
       req.user.userId,
       dto.platformId,
-      base64Data,
       file.mimetype,
     );
     return {

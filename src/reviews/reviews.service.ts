@@ -17,13 +17,12 @@ export class ReviewsService {
   async create(
     userId: string,
     platformId: string,
-    screenshotData: string,
     screenshotMimeType: string,
   ): Promise<Review> {
     const review = this.reviewsRepo.create({
       userId,
       platformId,
-      screenshotData,
+      screenshotData: '',
       screenshotMimeType,
       status: 'pending',
     });

@@ -19,7 +19,7 @@ export class Review {
   @Column()
   platformId: string;
 
-  @Column({ type: 'text' })
+  @Column({ type: 'text', default: '' })
   screenshotData: string;
 
   @Column()
